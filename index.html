@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to my Website! - Portfolio</title>
+  <meta name="description" content="Portfolio website of Juliza Lemus Hernandez - Student at University of Minnesota Duluth" />
+
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    /* small local card style so the "Get to Know Me" section matches other pages */
+    .content-section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .content-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+  /* keep the original video size (320x240) on desktop, responsive on small screens */
+  .content-row video { width: 320px; height: 240px; max-width: 100%; }
+
+    @media (max-width: 768px) {
+      .content-row { flex-direction: column; }
+      .content-row video { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div
+    class="welcome-banner"
+  >
+    Welcome
+  </div>
+
+  <nav class="navbar">
+    <div class="logo"></div>
+    <ul class="nav-links">
+      <li class="active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="hobbies.html"><i class="fas fa-heart"></i> Hobbies</a></li>
+      <li><a href="discover.html"><i class="fas fa-university"></i> Discover UMD</a></li>
+      <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+      <li><a href="career.html"><i class="fas fa-briefcase"></i> Career</a></li>
+      <li><a href="game.html"><i class="fas fa-gamepad"></i> Game</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Welcome Section -->
+    <section class="hero">
+      <div class="welcome-container">
+        <div class="welcome-content">
+          <h1 style="text-align: center;">Hi! I'm Juliza Lemus Hernandez</h1>
+          <div class="profile-photo">
+            <img
+              src="images/Headshot2025.jpg"
+              alt="Juliza Lemus Hernandez professional photo"
+            />
+          </div>
+
+          <!-- Personal Introduction -->
+          <div class="intro">
+            <p>
+              I am currently a sophomore at the University of Minnesota Duluth, planning on majoring in Accounting. I am from Saint Paul, Minnesota, and I am the middle child of my family. After My studies I plan to travel before I prepare myself to take my CPA license.
+            </p>
+          </div>
+
+          <!-- Professional Interests -->
+          <h2>Professional Interests</h2>
+          <p>
+            I'm interested in accounting and business management. I enjoy working with numbers, staying organized, and making sure everything is accurate. I'm also interested in helping businesses run smoothly, plan for the future, and improve how they operate.
+          </p>
+          <ul>
+            <li>Financial Accounting</li>
+            <li>Business Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Video Section -->
+  <section id="video" class="welcome-video content-section">
+      <h2>Get to Know Me</h2>
+
+      <div class="content-row">
+        <video controls>
+          <source src="videos/Better AI video of myself.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-topics">
+          <h3>In this video, I cover:</h3>
+          <ul>
+            <li>✓ A brief introduction about myself</li>
+            <li>✓ What you'll find on my website</li>
+            <li>✓ My career goals</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section class="hobbies-preview">
+      <h2>My Interests & Hobbies</h2>
+
+      <!-- First Hobby -->
+      <div class="hobby-row">
+        <div class="hobby-content">
+          <h3>Watching Soccer</h3>
+          <img
+            src="images/Picture of me at a soccer game.jpg"
+            alt="Person at a Real Madrid vs AC Milan soccer match at Soldier Field Stadium"
+            style="width: 350px; height: auto; float: right; margin-left: 20px;"
+          />
+          <p>
+            Watching soccer is something that I really enjoy doing in my free time. It allows me to put my focus on something new which is sometimes not the best because it ends up stressing me more. This picture was taken when I got to chance to see my favorite soccer team Real Madrid play against AC Milan.
+          </p>
+          <div class="hobby-details">
+            <h4>Why I Love It:</h4>
+            <ul>
+              <li>The excitement and the suspense</li>
+              <li>Following international tournaments</li>
+              <li>The joy it brings me</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Hobby -->
+      <div class="hobby-card">
+        <div class="hobby-image">
+          <h3>Walking & Nature Exploration</h3>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <img
+            src="images/Walk at Bagley w turtles.jpg"
+            alt="Turtles resting on a log in the water at Bagley Nature Area during a nature walk"
+            style="width: 250px; height: auto; margin-right: 20px;"
+          />
+          <div>
+            <div class="hobby-content">
+              <p>
+                In my free time I also enjoy going on walks and taking picture of nature. Walking is a way of getting both exercise and a good distraction. I took this picture while I was on my walk at Bagley and encountered turtles on a log. I also enjoy how I get to reconnect with nature and get cool photos like this one.
+              </p>
+              <div class="hobby-details">
+                <h4>What I Love About It:</h4>
+                <ul>
+                  <li>Discovering new paths</li>
+                  <li>Taking pictures of nature</li>
+                  <li>Being able to disconnect</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Link to Full Hobbies Page -->
+      <div class="learn-more">
+        <a href="hobbies.html" class="cta-button">
+          <span>Explore More About My Hobbies</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <p class="hint">
+          Visit my hobbies page for more activities and detailed stories!
+        </p>
+      </div>
+    </section>
+
+    <!-- Professional Headshot Section -->
+    <section class="about-me">
+      <div class="profile-section">
+        <div class="profile-content">
+          <p>Thank you for visiting my website!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Juliza Lemus Hernandez. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

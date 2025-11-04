@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hobbies | Juliza Lemus Hernandez</title>
+  <meta name="description" content="Learn about my hobbies and interests" />
+
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .content-section {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .content-wrapper {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .text-content {
+      flex: 1;
+    }
+    
+    .media-content {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end; /* align media to the right */
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* A fixed-width media column that pins the image to the right edge */
+    .media-right {
+      flex: 0 0 360px; /* change this value to resize the media column */
+      max-width: 40%;
+      justify-content: flex-end; /* align media to the right */
+      align-items: flex-end; /* align image to the right edge of the column */
+    }
+
+    /* Left-side media column */
+    .media-left {
+      flex: 0 0 360px;
+      max-width: 40%;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    /* Float-right helper for images that should sit inside text and have text wrap */
+    .feature-image.float-right {
+      float: right;
+      margin-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      width: 320px;
+      max-width: 40%;
+    }
+
+    /* Figure wrapper for floated images so caption appears under the image */
+    .float-figure {
+      float: right;
+      margin-left: 1.25rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      width: var(--hobby-media-width, 320px);
+      max-width: 40%;
+    }
+
+    .float-figure .img-caption {
+      display: block;
+      text-align: center;
+      margin-top: 0.5rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .img-caption {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+      text-align: right;
+    }
+    
+    .feature-image {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      
+      .media-content {
+        order: -1;
+        justify-content: center;
+      }
+
+      .img-caption {
+        text-align: center;
+      }
+      .media-right {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-banner">My Hobbies</div>
+
+  <nav class="navbar">
+    <div class="logo"></div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li class="active"><a href="hobbies.html"><i class="fas fa-heart"></i> Hobbies</a></li>
+      <li><a href="discover.html"><i class="fas fa-university"></i> Discover UMD</a></li>
+      <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+      <li><a href="career.html"><i class="fas fa-briefcase"></i> Career</a></li>
+      <li><a href="game.html"><i class="fas fa-gamepad"></i> Game</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="welcome-container">
+        <h1>My Hobbies & Interests</h1>
+        <p>Everyone has different ways of spending their free time and finding what makes them happy. For me, my hobbies are a mix of both excitement and relaxation. I love watching soccer because of the energy, emotion, and sense of connection it brings. On the other hand, I also enjoy going on walks and exploring nature, which helps me slow down and clear my mind after a busy day. Both of these hobbies play an important role in my life because they allow me to balance my love for high-energy moments with my need for peace and reflection.</p>
+      </div>
+    </section>
+
+    <section class="content-section hobby-soccer">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <h2>Hobby 1: Soccer</h2>
+          <p>Although I really enjoy watching soccer, I am not the best at playing it, so my hobby is focused on being a fan. I love all the emotions that come together when watching a game, including joy, anxiety, suspense, and even frustration when things do not go as planned. I get completely immersed in the matches, and during big tournaments it feels almost as if I am playing on the field myself. My favorite tournament is the World Cup because it brings people from all over the world together to celebrate the sport. I love seeing the incredible performances of the players, the creative outfits and face paint of the fans, and the electric tension that builds with every goal, every close call, and every decisive moment. I also enjoy the sense of community it creates. Watching with friends, family, or even strangers, everyone shares the same excitement and passion for the game. Soccer has taught me to appreciate teamwork, dedication, and the thrill of competition. It has become more than just a sport for me. It is a way to connect with people and experience unforgettable moments.</p>
+        </div>
+        <div class="media-content">
+          <img src="images/Picture of soccer game.jpg" alt="Real Madrid match against AC Milan at Soldier Field Stadium with players on the field" class="feature-image">
+          <p class="img-caption">Real Madrid match against AC Milan at Soldier Field Stadium</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobby 1 continued: second paragraph + second image in a new white section -->
+    <section class="content-section">
+      <div class="content-wrapper">
+        <div class="media-content media-left">
+          <img src="images/Picture of me watching World Cup in class.jpg" alt="Person watching Neymar take a penalty kick for Brazil against South Korea during the 2022 World Cup Round of 16 match on a laptop in a classroom" class="feature-image">
+          <p class="img-caption">Me in class watching Neymar take a penalty kick for Brazil against South Korea during the Round of 16 in the 2022 World Cup.</p>
+        </div>
+        <div class="text-content">
+          <h2>Why Soccer Is Important to Me</h2>
+          <p>Growing up, I would always wake up on the weekends to the TV yelling “GOL!” My dad was always watching soccer and became especially loud whenever his favorite team played. I loved seeing his passion for the game, and over time, it began to rub off on me. Now, I feel like a second version of him. When Real Madrid plays, our favorite team, we share the same emotions and react in the same way whenever they score. This passion is important to me because it gives me the chance to have meaningful and enjoyable conversations with my dad about something we both love.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobby 2: split into two white sections to reduce crowding -->
+    <section class="content-section">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <h2>Hobby 2: Walking and Nature Exploration</h2>
+          <p>In my free time, I really enjoy going on walks, whether it’s by myself or with friends. Spending time outdoors helps me clear my mind and recharge after a long day. One of my favorite parts about walking is getting to take in all the beautiful scenery around me. When I’m in Duluth, I especially love spotting the deer that wander through the woods; it’s always such a peaceful and calming sight. Back home, I often go for walks by a lake that’s near my house. The water, trees, and changing seasons make it a perfect place to unwind and enjoy some quiet time. I also love taking pictures of nature while I’m out on these walks. Capturing photos of sunsets, trees, or wildlife helps me appreciate the little details I might otherwise overlook, and it’s a fun way to remember those peaceful moments outdoors.</p>
+        </div>
+        <div class="media-content">
+          <img src="images/Cannal park.jpg" alt="Aerial Lift Bridge in Canal Park, Duluth, Minnesota with Lake Superior in the background" class="feature-image">
+          <p class="img-caption">Aerial Lift Bridge in Canal Park.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="content-wrapper">
+        <div class="media-content media-left">
+          <img src="images/Picture of walk downhill.jpg" alt="View from 21st Avenue in Duluth looking down at Lake Superior with trees and residential area in the distance" class="feature-image">
+          <p class="img-caption">Picture on 21st Ave looking down at Lake Superior</p>
+        </div>
+        <div class="text-content">
+          <h2>Why Walking and Nature Exploring Are Important to Me</h2>
+          <p>Going on these walks allows me to reconnect with nature and take in all the beauty around me. It helps me step away from my normal routine and reminds me that there’s more to life than just school and homework. When I start to feel overwhelmed or stressed out, walking gives me a break from everything and helps me clear my head. It’s nice to have some time where I don’t have to think about assignments or deadlines and can just focus on being outside. Sometimes I’ll stop to take pictures of the scenery, like the trees, the water, or even animals I see along the way. It’s something simple, but it always helps me feel more relaxed and refreshed afterward.</p>
+        </div>
+      </div>
+    </section>
+</main>
+
+    <!-- Footer (same on all pages) -->
+    <footer>
+        <p>&copy; 2025 Juliza Lemus Hernandez. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

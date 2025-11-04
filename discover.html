@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discover UMD | Juliza Lemus Hernandez</title>
+  <meta name="description" content="Learn about the University of Minnesota Duluth and why it's a great place to study" />
+
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Adjustable image size variable (change this value to resize the Duluth image) */
+    :root{
+      --duluth-img-width: 480px; /* increased to make video/image larger for easier viewing */
+      --feature-img-radius: 8px;
+      --section-bg: #fff;
+      --accent-color: #ff69b4;
+    }
+
+    .content-section {
+      background: var(--section-bg);
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .content-wrapper {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    /* Make text take most of the space and media a fixed column on the right */
+    .text-content {
+      flex: 1 1 auto;
+      min-width: 0; /* allow text to truncate/wrap properly */
+    }
+
+    /* Media column sits to the right, fixed width based on CSS variable */
+    .media-content {
+      flex: 0 0 var(--duluth-img-width);
+      display: flex;
+      justify-content: flex-end; /* push image/video to the right edge */
+      align-items: center;
+    }
+    
+    /* Default feature image/video styling */
+    .feature-image, .feature-video {
+      max-width: 100%;
+      border-radius: var(--feature-img-radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Make Duluth image smaller to match text height */
+    .duluth-section .duluth-media {
+      flex: 0 0 320px; /* Smaller fixed width to match text better */
+      align-items: flex-start; /* Align to top */
+    }
+    
+    .duluth-section .duluth-media .feature-image {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+
+    .feature-list {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: center;
+    }
+    
+    /* center each bullet item and display inline so the list appears centered */
+    .feature-list li {
+      display: inline-block;
+      margin: 0.25rem 0;
+      padding: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    
+    .feature-list li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    
+    
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      /* On small screens media goes above text and becomes full width */
+      .media-content {
+        order: -1;
+        flex: none;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-banner">Discover UMD</div>
+
+  <nav class="navbar">
+    <div class="logo"></div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="hobbies.html"><i class="fas fa-heart"></i> Hobbies</a></li>
+      <li class="active"><a href="discover.html"><i class="fas fa-university"></i> Discover UMD</a></li>
+      <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+      <li><a href="career.html"><i class="fas fa-briefcase"></i> Career</a></li>
+      <li><a href="game.html"><i class="fas fa-gamepad"></i> Game</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="welcome-container">
+        <h1>Discover UMD & Duluth</h1>
+        <p>The University of Minnesota Duluth is located in Duluth, MN and it is a midsized campus. It is surrounded by nature including one of the Great Lakes that is Lake Superior. There is always something to do in Duluth whether it's going to the beach, going on a hike, or staying in with friends. UMD is a great place to learn and create great memories.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <h2>Experience UMD</h2>
+          <p>To the right is a video to learn why different students choose UMD and what makes our campus special.</p>
+          <p class="video-credit">Created by: Cassidy Grimsley, Juliza Lemus Hernandez, Peyton Park, Ellie Roeder, and Jory Sauve</p>
+        </div>
+        <div class="media-content">
+          <video controls class="feature-video">
+            <source src="videos/Why did you choose UMD.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+   <section class="content-section">
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h2>Why I Chose UMD</h2>
+      <p>After visiting UMD my junior year of high school I knew this is where I wanted to attend. I fell in love with the medium size campus as well as Labovitz School of Business and Economics (LSBE). I also enjoyed the location because it wasn't too close to home nor too far. Lake Superior also caught my eye because of how gorgeous it was and the fact that I could go to the beach when I needed a break. Overall the beauty of the campus really caught my attention.</p>
+      <ul class="feature-list">
+        <li>Medium sized campus</li>
+        <li>Location</li>
+        <li>LSBE</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <section class="content-section duluth-section">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <h2>What I Love About Duluth</h2>
+          <p>Growing up, I often visited Duluth from Saint Paul with my family, and every time I am here it feels like I am reliving those memories. I love that there is always something to do in Duluth, even when you are on your own. For example, you can take a peaceful walk around campus or through Bagley Nature Area. That one-on-one time gives you a chance to slow down and focus on yourself. I also appreciate how much of the UMD campus is connected indoors, which makes it easy to get around without stepping outside. This is especially nice during the winter or on rainy days.</p>
+        </div>
+        <div class="media-content duluth-media">
+          <img src="images/Picture of Lake Superior (rocks).jpg" alt="Scenic view of Lake Superior with rocky shoreline in Duluth, Minnesota" class="feature-image">
+        </div>
+      </div>
+    </section>
+    <section class="content-section">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <h2>My Campus Experience</h2>
+          <p>When I first started college, I really struggled because it was my first time being away from home for what felt like forever. After meeting some great people and getting used to life at UMD, things became much easier, and I found myself excited to return to campus after trips home during the school year. During my first year, I lived in Ianni Hall, which was one of the nicer dorms. This year, I am living in Heaney Hall with three of my friends. I also have a car on campus now, so whenever I need a break from school, I like to go on drives to clear my mind and focus on other things. I originally came to college planning to major in Business Management, but this summer I decided to change my major to Accounting.</p>
+      </div>
+    </section>
+</main>
+
+
+</main>
+
+    <!-- Footer (same on all pages) -->
+    <footer>
+        <p>&copy; 2025 Juliza Lemus Hernandez. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

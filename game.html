@@ -30,6 +30,14 @@ box-sizing: border-box;
 
 body {
  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+ overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+ body {
+  overflow-x: hidden;
+  position: relative;
+ }
 }
 
 .game-page {
@@ -39,6 +47,16 @@ body {
  align-items: center;
  padding: 24px 0;
  gap: 20px;
+ flex-wrap: wrap;
+ min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+ .game-page {
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+ }
 }
 
 
@@ -50,6 +68,10 @@ width: 400px;
 
 height: 600px;
 
+max-width: 95vw;
+
+max-height: 70vh;
+
 background: linear-gradient(to bottom, #FFCC33 0%, #7A0019 100%);
 
 border: 3px solid #7A0019;
@@ -60,6 +82,23 @@ overflow: hidden;
 
 box-shadow: 0 10px 30px rgba(122,0,25,0.4);
 
+}
+
+@media (max-width: 768px) {
+ .game-container {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  max-width: 100%;
+  max-height: 60vh;
+ }
+}
+
+@media (max-width: 480px) {
+ .game-container {
+  height: 55vh;
+  min-height: 350px;
+ }
 }
 
 
@@ -79,6 +118,13 @@ font-weight: bold;
 
 }
 
+@media (max-width: 768px) {
+ .game-header {
+  font-size: 16px;
+  padding: 8px;
+ }
+}
+
 
 .score-board {
 
@@ -96,6 +142,13 @@ font-weight: bold;
 
 }
 
+@media (max-width: 768px) {
+ .score-board {
+  padding: 5px 12px;
+  font-size: 14px;
+ }
+}
+
 
 .game-area {
 
@@ -106,6 +159,16 @@ width: 100%;
 height: calc(100% - 80px);
 
 background: linear-gradient(to bottom, #FFF8DC 0%, #F5F5DC 100%);
+
+touch-action: none;
+
+user-select: none;
+
+-webkit-user-select: none;
+
+-moz-user-select: none;
+
+-ms-user-select: none;
 
 }
 
@@ -132,6 +195,16 @@ box-shadow: 0 4px 8px rgba(122,0,25,0.4);
 
 transition: left 0.1s ease;
 
+touch-action: none;
+
+}
+
+@media (max-width: 768px) {
+ .catcher {
+  width: 70px;
+  height: 18px;
+  bottom: 15px;
+ }
 }
 
 
@@ -149,6 +222,22 @@ border-radius: 50%;
 
 animation: fall linear;
 
+touch-action: none;
+
+}
+
+@media (max-width: 768px) {
+ .falling-object {
+  width: 45px;
+  height: 45px;
+ }
+}
+
+@media (max-width: 480px) {
+ .falling-object {
+  width: 40px;
+  height: 40px;
+ }
 }
 
 
@@ -168,6 +257,20 @@ background-color: transparent;
 
 }
 
+@media (max-width: 768px) {
+ .good-object {
+  width: 45px;
+  height: 45px;
+ }
+}
+
+@media (max-width: 480px) {
+ .good-object {
+  width: 40px;
+  height: 40px;
+ }
+}
+
 
 .bad-object {
 
@@ -183,6 +286,20 @@ border-radius: 50%;
 
 background-color: transparent;
 
+}
+
+@media (max-width: 768px) {
+ .bad-object {
+  width: 45px;
+  height: 45px;
+ }
+}
+
+@media (max-width: 480px) {
+ .bad-object {
+  width: 40px;
+  height: 40px;
+ }
 }
 
 
@@ -202,6 +319,20 @@ background-color: transparent;
 
 /* No extra animation here so it inherits the fall animation */
 
+}
+
+@media (max-width: 768px) {
+ .bonus-object {
+  width: 45px;
+  height: 45px;
+ }
+}
+
+@media (max-width: 480px) {
+ .bonus-object {
+  width: 40px;
+  height: 40px;
+ }
 }
 
 
@@ -253,6 +384,24 @@ text-align: center;
 
 display: none;
 
+z-index: 1000;
+
+max-width: 90%;
+
+}
+
+@media (max-width: 768px) {
+ .game-over {
+  padding: 24px 20px;
+  font-size: 14px;
+ }
+}
+
+@media (max-width: 480px) {
+ .game-over {
+  padding: 20px 16px;
+  font-size: 13px;
+ }
 }
 
 
@@ -262,6 +411,13 @@ margin-bottom: 20px;
 
 color: #FFCC33;
 
+}
+
+@media (max-width: 768px) {
+ .game-over h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+ }
 }
 
 
@@ -285,6 +441,16 @@ margin-top: 15px;
 
 transition: transform 0.2s;
 
+min-height: 44px; /* Touch-friendly size */
+
+}
+
+@media (max-width: 768px) {
+ .restart-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  min-height: 48px;
+ }
 }
 
 
@@ -305,6 +471,17 @@ font-size: 12px;
 max-width: 200px;
 }
 
+@media (max-width: 768px) {
+ .instructions {
+  max-width: 100%;
+  width: 100%;
+  font-size: 11px;
+  padding: 12px;
+  margin-bottom: 8px;
+  order: 1;
+ }
+}
+
 
 .level-indicator {
 position: right;
@@ -313,6 +490,14 @@ padding: 5px 10px;
 border-radius: 15px;
 font-weight: bold;
 color: #7A0019;
+}
+
+@media (max-width: 768px) {
+ .level-indicator {
+  padding: 8px 12px;
+  font-size: 14px;
+  order: 2;
+ }
 }
 
 .music-control {
@@ -328,6 +513,19 @@ transition: all 0.3s ease;
 align-self: flex-start;
 margin-top: 20px;
 height: fit-content;
+min-height: 44px; /* Touch-friendly size */
+}
+
+@media (max-width: 768px) {
+ .music-control {
+  padding: 12px 18px;
+  font-size: 16px;
+  min-height: 48px;
+  order: 3;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+ }
 }
 
 .music-control:hover {
@@ -370,7 +568,7 @@ opacity: 0.6;
   <main class="container">
     <div class="game-page">
       <div class="instructions">
-        🎮 Use A/D or ←/→ to move<br>
+        🎮 Use A/D, ←/→, or swipe/tap to move<br>
         🟢 Catch Champ for (+10)<br>
         🔴 Avoid University of Maryland (-20 points, -1 life)<br>
         🟡 Catch gold Champ for bonus (+50)
@@ -482,6 +680,14 @@ this.gameSpeed = 2000; // milliseconds between drops
 
 this.dropInterval = null;
 
+// Touch control state
+
+this.touchStartX = null;
+
+this.touchStartY = null;
+
+this.isDragging = false;
+
 
 this.init();
 
@@ -547,7 +753,102 @@ break;
 });
 
 
-// Touch/mouse support for mobile
+// Touch support for mobile - swipe gestures
+
+this.gameArea.addEventListener('touchstart', (e) => {
+
+if (!this.gameRunning) return;
+
+e.preventDefault();
+
+const touch = e.touches[0];
+
+this.touchStartX = touch.clientX;
+
+this.touchStartY = touch.clientY;
+
+this.isDragging = false;
+
+}, { passive: false });
+
+
+this.gameArea.addEventListener('touchmove', (e) => {
+
+if (!this.gameRunning || this.touchStartX === null) return;
+
+e.preventDefault();
+
+const touch = e.touches[0];
+
+const deltaX = touch.clientX - this.touchStartX;
+
+const deltaY = Math.abs(touch.clientY - this.touchStartY);
+
+
+// Detect horizontal swipe (more horizontal than vertical movement)
+
+if (Math.abs(deltaX) > 10 && Math.abs(deltaX) > deltaY) {
+
+this.isDragging = true;
+
+const rect = this.gameArea.getBoundingClientRect();
+
+const touchX = touch.clientX - rect.left;
+
+const touchPercentage = (touchX / rect.width) * 100;
+
+this.catcherPosition = Math.max(0, Math.min(100, touchPercentage));
+
+this.catcher.style.left = this.catcherPosition + '%';
+
+}
+
+}, { passive: false });
+
+
+this.gameArea.addEventListener('touchend', (e) => {
+
+if (!this.gameRunning) return;
+
+e.preventDefault();
+
+
+// If it was a tap (not a drag), move towards tap position
+
+if (!this.isDragging && this.touchStartX !== null) {
+
+const touch = e.changedTouches[0];
+
+const rect = this.gameArea.getBoundingClientRect();
+
+const touchX = touch.clientX - rect.left;
+
+const touchPercentage = (touchX / rect.width) * 100;
+
+
+if (touchPercentage < this.catcherPosition) {
+
+this.moveCatcher(-20);
+
+} else {
+
+this.moveCatcher(20);
+
+}
+
+}
+
+
+this.touchStartX = null;
+
+this.touchStartY = null;
+
+this.isDragging = false;
+
+}, { passive: false });
+
+
+// Mouse support for desktop (click to move)
 
 this.gameArea.addEventListener('click', (e) => {
 

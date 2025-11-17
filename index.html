@@ -36,6 +36,21 @@
     @media (max-width: 768px) {
       .content-row { flex-direction: column; }
       .content-row video { width: 100%; height: auto; }
+      
+      /* Walking section: image on top on mobile */
+      .walking-content-wrapper {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      
+      .walking-image {
+        width: 100% !important;
+        max-width: 350px !important;
+        height: auto !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+        float: none !important;
+      }
     }
   </style>
 </head>
@@ -148,16 +163,17 @@
         <div class="hobby-image">
           <h3>Walking & Nature Exploration</h3>
         </div>
-        <div style="display: flex; align-items: center;">
+        <div class="walking-content-wrapper" style="display: flex; align-items: center;">
           <img
             src="images/Walk at Bagley w turtles.jpg"
             alt="Turtles resting on a log in the water at Bagley Nature Area during a nature walk"
+            class="walking-image"
             style="width: 250px; height: auto; margin-right: 20px;"
           />
           <div>
             <div class="hobby-content">
               <p>
-                In my free time I also enjoy going on walks and taking picture of nature. Walking is a way of getting both exercise and a good distraction. I took this picture while I was on my walk at Bagley and encountered turtles on a log. I also enjoy how I get to reconnect with nature and get cool photos like this one.
+                I enjoy walking and taking nature photos. It's great exercise and a peaceful distraction. This photo shows turtles I spotted at Bagley Nature Area. Walking helps me reconnect with nature and capture moments like this.
               </p>
               <div class="hobby-details">
                 <h4>What I Love About It:</h4>

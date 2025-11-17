@@ -688,6 +688,14 @@ this.touchStartY = null;
 
 this.isDragging = false;
 
+// Mobile detection
+
+this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.innerWidth <= 768);
+
+// Audio unlock flag for mobile
+
+this.audioUnlocked = false;
+
 
 this.init();
 
@@ -714,9 +722,71 @@ this.musicGainNode = this.audioContext.createGain();
 
 this.musicGainNode.connect(this.audioContext.destination);
 
+
+// On mobile, unlock audio on first touch/interaction
+
+if (this.isMobile) {
+
+this.unlockAudioOnInteraction();
+
+}
+
 } catch (e) {
 
 console.log('Web Audio API not supported:', e);
+
+}
+
+}
+
+
+unlockAudioOnInteraction() {
+
+// Create a silent buffer to unlock audio on mobile
+
+const unlockAudio = () => {
+
+if (this.audioContext && this.audioContext.state === 'suspended') {
+
+this.audioContext.resume().then(() => {
+
+this.audioUnlocked = true;
+
+// If game is running, start music
+
+if (this.gameRunning && this.musicEnabled && !this.backgroundMusicSource) {
+
+this.playElevatorMusic();
+
+}
+
+}).catch(e => console.log('Could not unlock audio:', e));
+
+}
+
+};
+
+
+// Try to unlock on various user interactions
+
+const events = ['touchstart', 'touchend', 'mousedown', 'keydown', 'click'];
+
+events.forEach(event => {
+
+document.addEventListener(event, unlockAudio, { once: true, passive: true });
+
+});
+
+
+// Also try to unlock immediately if possible
+
+if (this.audioContext) {
+
+this.audioContext.resume().then(() => {
+
+this.audioUnlocked = true;
+
+}).catch(() => {});
 
 }
 
@@ -760,6 +830,27 @@ this.gameArea.addEventListener('touchstart', (e) => {
 if (!this.gameRunning) return;
 
 e.preventDefault();
+
+// Unlock audio on mobile if not already unlocked
+
+if (this.isMobile && this.audioContext && this.audioContext.state === 'suspended') {
+
+this.audioContext.resume().then(() => {
+
+this.audioUnlocked = true;
+
+// Start music if game is running and music is enabled
+
+if (this.gameRunning && this.musicEnabled && !this.backgroundMusicSource) {
+
+this.playElevatorMusic();
+
+}
+
+}).catch(() => {});
+
+}
+
 
 const touch = e.touches[0];
 
@@ -922,13 +1013,31 @@ this.backgroundMusicSource = null;
 
 // Play background music if enabled
 if (this.musicEnabled && this.audioContext) {
-// Resume audio context if suspended (browser autoplay policy)
+// On mobile, try to auto-play music
+if (this.isMobile) {
+// Try to resume audio context and play music
+if (this.audioContext.state === 'suspended') {
+// Try to unlock and play
+this.audioContext.resume().then(() => {
+this.audioUnlocked = true;
+this.playElevatorMusic();
+}).catch(e => {
+// If resume fails, unlock on next interaction
+console.log('Audio context suspended, will unlock on interaction:', e);
+});
+} else {
+// Audio context is already active, play music
+this.playElevatorMusic();
+}
+} else {
+// Desktop: Resume audio context if suspended (browser autoplay policy)
 if (this.audioContext.state === 'suspended') {
 this.audioContext.resume().then(() => {
 this.playElevatorMusic();
 }).catch(e => console.log('Could not resume audio context:', e));
 } else {
 this.playElevatorMusic();
+}
 }
 }
 
@@ -1264,6 +1373,16 @@ this.levelElement.textContent = this.level;
 playElevatorMusic() {
 
 if (!this.audioContext || this.backgroundMusicSource) return;
+
+
+// Ensure audio context is running (especially important for mobile)
+
+if (this.audioContext.state === 'suspended') {
+
+this.audioContext.resume().catch(() => {});
+
+}
+
 
 try {
 

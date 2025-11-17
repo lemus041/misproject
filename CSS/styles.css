@@ -233,6 +233,23 @@ h3 { font-size: 1.2rem; }
    margin-top: 16px;
 }
 
+.pdf-buttons {
+   display: flex;
+   gap: 16px;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+   .pdf-buttons {
+      flex-direction: column;
+   }
+   
+   .pdf-buttons .cta-button {
+      width: 100%;
+   }
+}
+
 .resume-grid {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

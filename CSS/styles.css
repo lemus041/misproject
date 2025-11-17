@@ -243,6 +243,7 @@ h3 { font-size: 1.2rem; }
 @media (max-width: 600px) {
    .pdf-buttons {
       flex-direction: column;
+      gap: 12px;
    }
    
    .pdf-buttons .cta-button {

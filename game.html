@@ -538,6 +538,136 @@ transform: scale(1.05);
 opacity: 0.6;
 }
 
+.credits-btn {
+background: rgba(122,0,25,0.9);
+color: #FFCC33;
+border: 2px solid #FFCC33;
+padding: 10px 16px;
+border-radius: 20px;
+cursor: pointer;
+font-size: 14px;
+font-weight: bold;
+transition: all 0.3s ease;
+align-self: flex-start;
+margin-top: 20px;
+height: fit-content;
+min-height: 44px; /* Touch-friendly size */
+}
+
+@media (max-width: 768px) {
+ .credits-btn {
+  padding: 12px 18px;
+  font-size: 16px;
+  min-height: 48px;
+  order: 4;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+ }
+}
+
+.credits-btn:hover {
+background: rgba(255,204,51,0.9);
+color: #7A0019;
+transform: scale(1.05);
+}
+
+.credits-modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 2000;
+}
+
+.credits-modal.active {
+display: flex;
+}
+
+.credits-content {
+background: linear-gradient(135deg, #7A0019 0%, #FFCC33 100%);
+padding: 40px;
+border-radius: 20px;
+max-width: 500px;
+width: 90%;
+text-align: center;
+box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+position: relative;
+}
+
+.credits-content h2 {
+color: #FFCC33;
+margin-bottom: 20px;
+font-size: 28px;
+}
+
+.credits-content h3 {
+color: #FFCC33;
+margin-top: 25px;
+margin-bottom: 15px;
+font-size: 18px;
+}
+
+.credits-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.credits-list li {
+color: #fff;
+font-size: 16px;
+padding: 8px 0;
+font-weight: 500;
+}
+
+.close-credits {
+position: absolute;
+top: 15px;
+right: 15px;
+background: rgba(255,204,51,0.9);
+color: #7A0019;
+border: none;
+width: 35px;
+height: 35px;
+border-radius: 50%;
+cursor: pointer;
+font-size: 20px;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.3s ease;
+}
+
+.close-credits:hover {
+background: #FFCC33;
+transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+ .credits-content {
+  padding: 30px 20px;
+ }
+ 
+ .credits-content h2 {
+  font-size: 24px;
+ }
+ 
+ .credits-content h3 {
+  font-size: 16px;
+ }
+ 
+ .credits-list li {
+  font-size: 14px;
+ }
+}
+
 </style>
 
 </head>
@@ -621,8 +751,28 @@ UMD Drop and Catch Game
         <i class="fas fa-music"></i> Music: ON
       </button>
       
+      <button class="credits-btn" onclick="showCredits()">
+        <i class="fas fa-users"></i> Credits
+      </button>
+      
     </div>
   </main>
+
+  <!-- Credits Modal -->
+  <div class="credits-modal" id="creditsModal" onclick="closeCreditsOnBackdrop(event)">
+    <div class="credits-content">
+      <button class="close-credits" onclick="closeCredits()" aria-label="Close credits">&times;</button>
+      <h2>Game Credits</h2>
+      <h3>Developed By:</h3>
+      <ul class="credits-list">
+        <li>Cassidy Grimsley</li>
+        <li>Juliza Lemus Hernandez</li>
+        <li>Peyton Park</li>
+        <li>Ellie Roeder</li>
+        <li>Jory Sauve</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- Audio elements for music and sound effects -->
   <!-- Background music is generated using Web Audio API - no files needed! -->
@@ -1748,6 +1898,47 @@ if (game.musicGainNode) {
 game.musicGainNode.gain.value = 0;
 
 }
+
+}
+
+}
+
+
+// Credits functions
+
+function showCredits() {
+
+const modal = document.getElementById('creditsModal');
+
+if (modal) {
+
+modal.classList.add('active');
+
+}
+
+}
+
+
+function closeCredits() {
+
+const modal = document.getElementById('creditsModal');
+
+if (modal) {
+
+modal.classList.remove('active');
+
+}
+
+}
+
+
+function closeCreditsOnBackdrop(event) {
+
+// Close if clicking on the backdrop (not the content)
+
+if (event.target.classList.contains('credits-modal')) {
+
+closeCredits();
 
 }
 
